@@ -317,30 +317,17 @@ public class SlashBladeBuiltInRegistry {
                         .defaultSwordType(List.of(SwordType.BEWITCHED)).build(),
                 Lists.newArrayList()));
 
-        bootstrap.register(TEST, new SlashBladeDefinition(SlashBlade.prefix("test"),
-                RenderDefinition.Builder.newInstance().textureName(SlashBlade.prefix("model/named/test/test.png"))
-                        .modelName(SlashBlade.prefix("model/named/test/test.obj"))
-                        .standbyRenderType(CarryType.PSO2)
-                        .build(),
-                PropertiesDefinition.Builder.newInstance().baseAttackModifier(4.5F).maxDamage(99)
-                        .defaultSwordType(List.of(SwordType.BEWITCHED)).build(),
-                Lists.newArrayList()));
-
         bootstrap.register(MISFORTUNE, new SlashBladeDefinition(SlashBlade.prefix("misfortune"),
                 RenderDefinition.Builder.newInstance().textureName(SlashBlade.prefix("model/named/misfortune/misfortune.png"))
                         .modelName(SlashBlade.prefix("model/named/misfortune/misfortune.obj"))
                         .effectColor(0x9932CC)
-                        .standbyRenderType(CarryType.KATANA)
+                        .standbyRenderType(CarryType.NINJA)
                         .build(),
                 PropertiesDefinition.Builder.newInstance().baseAttackModifier(9.9F).maxDamage(1428)
                         .defaultSwordType(List.of(SwordType.BEWITCHED))
-                        .slashArtsType(SlashArtsRegistry.SLASH_ARTS.getKey(SlashArtsRegistry.DRIVE_VERTICAL))
                         .addSpecialEffect(SpecialEffectsRegistry.SPECIAL_EFFECT.getKey(SpecialEffectsRegistry.WITHER_EDGE))
                         .build(),
-                List.of(
-                        new EnchantmentDefinition(getEnchantmentID(Enchantments.POWER_ARROWS), 3),
-                        new EnchantmentDefinition(getEnchantmentID(Enchantments.UNBREAKING), 3)
-                )));
+                Lists.newArrayList()));
     }
 
     private static ResourceLocation getEnchantmentID(Enchantment enchantment) {
@@ -348,8 +335,7 @@ public class SlashBladeBuiltInRegistry {
     }
 
     private static ResourceKey<SlashBladeDefinition> register(String id) {
-        ResourceKey<SlashBladeDefinition> loc = ResourceKey.create(SlashBladeDefinition.REGISTRY_KEY,
+        return ResourceKey.create(SlashBladeDefinition.REGISTRY_KEY,
                 SlashBlade.prefix(id));
-        return loc;
     }
 }

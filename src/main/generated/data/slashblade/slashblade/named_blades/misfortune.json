@@ -1,0 +1,19 @@
+{
+  "name": "slashblade:misfortune",
+  "properties": {
+    "attack_base": 9.9,
+    "max_damage": 1428,
+    "special_effects": [
+      "slashblade:wither_edge"
+    ],
+    "sword_type": [
+      "bewitched"
+    ]
+  },
+  "render": {
+    "carry_type": "katana",
+    "model": "slashblade:model/named/misfortune/misfortune.obj",
+    "summon_sword_color": 10040012,
+    "texture": "slashblade:model/named/misfortune/misfortune.png"
+  }
+}
