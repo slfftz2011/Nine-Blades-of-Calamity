@@ -127,9 +127,9 @@ public class SlashBlade {
                     .replace("entity_", "");
         }
 
-        /**
-         * /scoreboard objectives add stat minecraft.custom:slashblade.sword_summoned
-         * /scoreboard objectives setdisplay sidebar stat
+        /*
+          /scoreboard objectives add stat minecraft.custom:slashblade.sword_summoned
+          /scoreboard objectives setdisplay sidebar stat
          */
     }
 

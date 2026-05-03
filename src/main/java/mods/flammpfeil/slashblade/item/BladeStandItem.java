@@ -13,6 +13,7 @@ import net.minecraft.world.item.HangingEntityItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.NotNull;
 
 public class BladeStandItem extends HangingEntityItem {
     private final boolean isWallType;
@@ -28,7 +29,7 @@ public class BladeStandItem extends HangingEntityItem {
     }
 
     @Override
-    public InteractionResult useOn(UseOnContext context) {
+    public @NotNull InteractionResult useOn(UseOnContext context) {
         BlockPos blockpos = context.getClickedPos();
         Direction direction = context.getClickedFace();
         BlockPos blockpos1 = blockpos.relative(direction);
@@ -59,7 +60,7 @@ public class BladeStandItem extends HangingEntityItem {
         }
     }
 
-    protected boolean mayPlace(Player player, Direction dir, ItemStack stack, BlockPos pos) {
+    protected boolean mayPlace(@NotNull Player player, @NotNull Direction dir, @NotNull ItemStack stack, @NotNull BlockPos pos) {
         if (isWallType)
             return !dir.getAxis().isVertical() && !player.level().isOutsideBuildHeight(pos)
                     && player.mayUseItemAt(pos, dir, stack);

@@ -1,5 +1,6 @@
 package mods.flammpfeil.slashblade.item;
 
+import lombok.Getter;
 import mods.flammpfeil.slashblade.capability.slashblade.SimpleSlashBladeState;
 import mods.flammpfeil.slashblade.capability.slashblade.SlashBladeState;
 import mods.flammpfeil.slashblade.init.DefaultResources;
@@ -12,6 +13,7 @@ import net.minecraft.world.level.Level;
 
 import java.util.List;
 
+@Getter
 public class ItemSlashBladeDetune extends ItemSlashBlade {
     private ResourceLocation model;
     private ResourceLocation texture;
@@ -26,30 +28,14 @@ public class ItemSlashBladeDetune extends ItemSlashBlade {
         this.texture = DefaultResources.resourceDefaultTexture;
     }
 
-    public ResourceLocation getModel() {
-        return model;
-    }
-
     public ItemSlashBladeDetune setModel(ResourceLocation model) {
         this.model = model;
         return this;
     }
 
-    public ResourceLocation getTexture() {
-        return texture;
-    }
-
     public ItemSlashBladeDetune setTexture(ResourceLocation texture) {
         this.texture = texture;
         return this;
-    }
-
-    public float getBaseAttack() {
-        return baseAttack;
-    }
-
-    public boolean isDestructable() {
-        return isDestructable;
     }
 
     public ItemSlashBladeDetune setDestructable() {
